@@ -1,0 +1,22 @@
+version: '3.0'
+services:
+  service:
+      build:
+        dockerfile: Dockerfile
+        context: .
+      restart: always
+      networks:
+        - dug-network
+      environment:
+        ELASTIC_API_HOST: "$ELASTIC_API_HOST"
+        ELASTIC_PASSWORD: "$ELASTIC_PASSWORD"
+        PYTHONUNBUFFERED: "TRUE"
+      entrypoint: [ "gunicorn",
+                      "--workers=$API_WORKERS", "--name=dug",
+                      "--bind=0.0.0.0:$API_PORT", "--timeout=$API_TIMEOUT",
+                      "--log-level=DEBUG", "-k", "uvicorn.workers.UvicornWorker", "--reload", "app.server:APP" ]
+      ports:
+        - $API_PORT:$API_PORT
+networks:
+  dug-network:
+    driver: bridge
