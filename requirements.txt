@@ -1,6 +1,5 @@
 fastapi==0.95.0
 ormar==0.12.1
-psycopg2-binary==2.9.5
 uvicorn
 elasticsearch[async]==8.5.2
 gunicorn
