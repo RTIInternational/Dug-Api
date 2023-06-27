@@ -20,12 +20,7 @@ class Config:
             "elastic_host": "ELASTIC_API_HOST",
             "elastic_port": "ELASTIC_API_PORT",
             "elastic_username": "ELASTIC_USERNAME",
-            "elastic_password": "ELASTIC_PASSWORD",
-            "redis_host": "REDIS_HOST",
-            "redis_port": "REDIS_PORT",
-            "redis_password": "REDIS_PASSWORD",
-            "nboost_host": "NBOOST_API_HOST",
-            "nboost_port": "NBOOST_API_PORT"
+            "elastic_password": "ELASTIC_PASSWORD"
         }
 
         kwargs = {}
