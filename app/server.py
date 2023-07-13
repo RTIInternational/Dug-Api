@@ -103,7 +103,7 @@ async def search_var(search_query: SearchVariablesQuery):
         "status": "success"
     }
 
-@APP.post('/search-api/')
+@APP.get('/search-api/')
 async def base():
     return {
         "message": "Welcome to the Dug Search API",
